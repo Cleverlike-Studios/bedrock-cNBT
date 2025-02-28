@@ -48,7 +48,7 @@ static void* swap_bytes(void* s, size_t len)
 /* big endian to native endian. works in-place */
 static void* be2ne(void* s, size_t len)
 {
-    return little_endian() ? swap_bytes(s, len) : s;
+    return little_endian() ? s : swap_bytes(s, len);
 }
 
 /* native endian to big endian. works the exact same as its inverse */
